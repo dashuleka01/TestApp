@@ -2,7 +2,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="100" d:DesignHeight="100"
+        xmlns:oxy="clr-namespace:OxyPlot.Avalonia;assembly=OxyPlot.Avalonia"
+        mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="500"
         x:Class="TestApp.MainWindow"
         Title="TestApp">
   <StackPanel Width="50">
@@ -11,5 +12,16 @@
     <TextBox Name="Number2" Text="1"/>
     <Button Name="Sum" Click="Sum">=</Button>
     <TextBox Name="Number3" Text="" IsReadOnly="True"/>
+  
+  
+    <oxy:Plot Title="Hello" Height="300" Width="300" IsEnabled="False">
+      <oxy:Plot.Axes>
+        <oxy:LinearAxis Position="Bottom" Minimum="0" Maximum="100"/>
+        <oxy:LinearAxis Position="Left" Minimum="0" Maximum="100"/>
+     </oxy:Plot.Axes>
+      <oxy:Plot.Series>
+        <oxy:LineSeries Name="Plot"/>
+      </oxy:Plot.Series>
+    </oxy:Plot>
   </StackPanel>
 </Window>
